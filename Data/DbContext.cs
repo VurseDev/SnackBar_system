@@ -1,35 +1,38 @@
 using Microsoft.EntityFrameworkCore;
-using Product.Models;
+using SnackBar_system.Models;
 
-namespace Product.Data;
+namespace SnackBar_system.Data;
 
-public class ProductContext : DbContext
+public class SnackBarContext : DbContext
 {
-    public ProductContext(DbContextOptions<ProductContext> options)
+    public SnackBarContext(DbContextOptions<SnackBarContext> options)
         : base(options)
     {
     }
 
+    public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Movimentacao> Movimentacoes { get; set; }
-    public DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
-        // Movimentação -> Produto (1:N)
-        modelBuilder.Entity<Movimentacao>()
-            .HasOne(m => m.Produto)
-            .WithMany(p => p.Movimentacoes)
-            .HasForeignKey(m => m.ProdutoId)
-            .OnDelete(DeleteBehavior.Cascade);
 
-        // Movimentação -> Usuário (1:N)
         modelBuilder.Entity<Movimentacao>()
-            .HasOne(m => m.Usuario)
-            .WithMany(u => u.Movimentacoes)
-            .HasForeignKey(m => m.UsuarioId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .HasOne<Produto>()                       
+            .WithMany()                             
+            .HasForeignKey(m => m.ProdutoId)        
+            .OnDelete(DeleteBehavior.Restrict);      
+
+        modelBuilder.Entity<Movimentacao>()
+            .HasOne<Usuario>()                       
+            .WithMany()
+            .HasForeignKey(m => m.UsuarioId)         
+            .OnDelete(DeleteBehavior.Restrict);      
+
+        modelBuilder.Entity<Usuario>().ToTable("Usuarios");
+        modelBuilder.Entity<Produto>().ToTable("Produtos");
+        modelBuilder.Entity<Movimentacao>().ToTable("Movimentacoes");
     }
 }
