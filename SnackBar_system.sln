@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnackBar_system", "SnackBar_system.csproj", "{3882DFC3-0505-B7D1-1C88-54EF72E8DC16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3882DFC3-0505-B7D1-1C88-54EF72E8DC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3882DFC3-0505-B7D1-1C88-54EF72E8DC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3882DFC3-0505-B7D1-1C88-54EF72E8DC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3882DFC3-0505-B7D1-1C88-54EF72E8DC16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9F6A653-52D4-469D-B559-3F638AD92732}
+	EndGlobalSection
+EndGlobal
