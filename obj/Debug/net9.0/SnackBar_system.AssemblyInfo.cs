@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SnackBar_system")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b88b87c92fada90843432066dced08e07e5d16f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+564ed85e6866ebff376a71ecf14b8d8083c96762")]
 [assembly: System.Reflection.AssemblyProductAttribute("SnackBar_system")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SnackBar_system")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
