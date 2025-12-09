@@ -33,7 +33,7 @@ public static class ProdutoRoute
             await context.SaveChangesAsync();
         });
         
-        app.MapPut("/produtos",
+        app.MapPut("/produtos/reservar",
         async (SnackBarContext context, ReservaRequest req) =>
         {
             var product = await context.Produtos.FirstOrDefaultAsync(x => x.Id == req.produtoId);

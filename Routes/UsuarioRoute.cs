@@ -24,5 +24,7 @@ public static class UsuarioRoute
             return Results.Ok(user);
         });
 
+        
+
     }
 }
