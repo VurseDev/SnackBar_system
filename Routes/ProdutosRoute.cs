@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SnackBar_system.Data;
+using SnackBar_system.Models;
 
 namespace SnackBar_system;
 
@@ -15,5 +16,22 @@ public static class ProdutoRoute
             var product = await context.Produtos.ToListAsync();
             return Results.Ok(product);
         });
+
+        app.MapPost("/produtos",
+        async(SnackBarContext context, ProdutoRequest req) =>
+        {
+            var product = new Produto(
+                req.nome,
+                req.categoria,
+                req.preco,
+                req.quantidadeTotal,
+                req.quantidadeDisponivel,
+                req.quantidadeReserva
+            );
+
+            context.Produtos.Add(product);
+            await context.SaveChangesAsync();
+        });
+        
     }
 }
