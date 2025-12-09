@@ -1,4 +1,4 @@
-namespace SnackBar_system.Models
+namespace SnackBar_system.Models;
 
 public record EntradaRequest(
     Guid produtoId,

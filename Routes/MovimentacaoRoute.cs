@@ -35,7 +35,7 @@ public static class MovimentacaoRoute
         });
 
         //registrar saida
-        app.MapPost("/produtos",
+        app.MapPost("/produtos/saida",
         async (SnackBarContext context, SaidaRequest req) =>
         {
             var product = await context.Produtos.FirstOrDefaultAsync(x => x.Id == req.produtoId);
