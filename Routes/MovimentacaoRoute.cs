@@ -46,7 +46,7 @@ public static class MovimentacaoRoute
             if (usuario is null)
                 return Results.NotFound("Usuário não encontrado");
 
-            product.AdicionarEstoque(req.quantidade);
+            product.RegistrarVenda(req.quantidade);
 
             var mov = new Movimentacao(
                 req.produtoId,
