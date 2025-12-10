@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SnackBar_system.Data;
 using SnackBar_system.Models;
 
@@ -54,6 +55,20 @@ public static class ProdutoRoute
             );
 
             return Results.Ok(mov);
+        });
+
+        app.MapDelete("/produtos/{nome}",
+        async(string nome, SnackBarContext context) =>
+        {
+            var product = await context.Produtos.FirstOrDefaultAsync(x => x.Nome == nome);
+
+            if (product == null)
+                return Results.NotFound();
+            
+            context.Remove(product);
+            await context.SaveChangesAsync();
+
+            return Results.Ok();
         });
     }
 }
